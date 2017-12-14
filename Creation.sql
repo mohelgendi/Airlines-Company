@@ -81,8 +81,8 @@
     Leg_Number           int(2)     NOT NULL,
     Date                 DATE           NOT NULL,
     Seat_Number          INT            NOT NULL,
-    Customer_Name        CHAR           NOT NULL,
-    Customer_Phone       CHAR           NOT NULL, 
+    Customer_Name        varchar(100)           not NULL,
+    Customer_Phone       varchar(100)        NOT NULL, 
     PRIMARY KEY(Flight_Number,Leg_Number,Date,Seat_number),
     FOREIGN KEY(Flight_Number,Leg_Number,Date) REFERENCES Leg_Instance(Flight_number,Leg_Number,Date));
 	/*****************************END OF CREATING TABLES****************************/
@@ -148,20 +148,54 @@
 	("B6624", 1, "LAX", "091500", "JFK", "052200");
     
     /**********************END OF FLIGHT_LEG**********************/
-
+    
+    /**********************FILLING AIRPLANE*********************/
+    INSERT INTO Airplane(Airplane_id,Total_number_of_seats,Airplane_type) VALUES
+	(1, 180, "A320"),
+	(2, 175, "A320"),
+	(3, 156, "A319"),
+	(4, 150, "A319"),
+	(5, 145, "A319"),
+	(6, 188, "707"),
+	(7, 187, "707"),
+	(8, 124, "727"),
+	(9, 123, "737"),
+	(10, 120, "737"),
+	(11, 550, "747"),
+	(12, 500, "747"),
+	(13, 225, "757"),
+	(14, 290, "767"),
+	(15, 285, "767"),
+	(16, 440, "777"),
+	(17, 323, "787"),
+	(18, 50, "ERJ145"),
+	(19, 50, "ERJ145"),
+	(20, 110, "190"),
+	(21, 80, "170"),
+	(22, 44, "CRJ440"),
+	(23, 40, "CRJ440"),
+	(24, 50, "CRJ100"),
+	(25, 70, "CRJ700"),
+	(26, 75, "CRJ700"),
+	(27, 77, "CRJ700"),
+	(28, 166, "MD80"),
+	(29, 200, "A321"),
+	(30, 180, "A332");
+    /********************END OF FILLING AIRPLANE***************/
+    
     /****************FILLING LEG_INSTANCE***************/
-    INSERT INTO Leg_Instance(Flight_Number, Leg_Number,Date,Number_Of_Available_Seats,Airplane_Id, Departure_Airport_Code,
+   INSERT INTO Leg_Instance(Flight_Number, Leg_Number,Date,Number_Of_Available_Seats,Airplane_Id, Departure_Airport_Code,
     						 Departure_Time, Arrival_Airport_Code, Arrival_Time) VALUES
-    ("G4155", 1, 2016-01-28, 3, 28, "SCK", 053500, "IWA", 081900),
-	("G4155", 1, 2016-01-31, 16, 28, "SCK", 0531, "IWA", 081300),
-	("G4154", 1, 2016-02-03, 19, 28, "SCK", 040600, "IWA", 045100),
-	("DL5841", 1, 2016-02-09, 5, 21, "OAK", 124500, "LAX", 020500),
-	("DL1149", 1, 2016-02-09, 20, 13, "LAX", 064500, "HNL", 104300),
-	("HA48", 1, 2016-02-24, 10, 30, "HNL", 021500, "OAK", 091000),
-	("AA1522", 1, 2016-08-05, 70, 9, "SFO", 120500, "ORD", 060400),
-	("AA3472", 1, 2016-08-05, 15, 18, "ORD", 071900, "MSN", 081900),
-	("WN380", 1, 2016-08-05, 130, 10, "MDW", 075500, "ONT", 101000),
-	("WN380", 2, 2016-08-05, 130, 10, "ONT", 104500, "SMF", 114500),
-	("B6624", 1, 2016-02-09, 100, 1, "LAX", 091500, "JFK", 052200);
+    ("G4155", 1, "2016-01-28", 3, 28, "SCK", "053500", "IWA", "081900"),
+	("G4155", 1, "2016-01-31", 16, 28, "SCK", "0531", "IWA", "081300"),
+	("G4154", 2, "2016-02-03", 19, 28, "SCK", "040600", "IWA", "045100"),
+	("DL5841", 1, "2016-02-09", 5, 21, "OAK", "124500", "LAX", "020500"),
+	("DL1149", 1, "2016-02-09", 20, 13, "LAX", "064500", "HNL", "104300"),
+	("HA48", 2, "2016-02-24", 10, 30, "HNL", "021500", "OAK", "091000"),
+	("AA1522", 1, "2016-08-05", 70, 9, "SFO", "120500", "ORD", "060400"),
+	("AA3472", 1, "2016-08-05", 15, 18, "ORD", "071900", "MSN", "081900"),
+	("WN380", 1, "2016-08-05", 130, 10, "MDW", "075500", "ONT", "101000"),
+	("WN380", 2, "2016-08-05", 130, 10, "ONT", "104500", "SMF", "114500"),
+	("B6624", 1, "2016-02-09", 100, 1, "LAX", "091500", "JFK", "052200");
 
     /****************END OF FILLING LEG_INSTANCE***************/
