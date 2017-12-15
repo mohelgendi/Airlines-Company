@@ -1,3 +1,7 @@
+
+CREATE SCHEMA `airline_company` ;
+use airline_company
+
 /* airport table;*/
     CREATE TABLE Airport(
     Airport_Code varchar(5) NOT NULL,
